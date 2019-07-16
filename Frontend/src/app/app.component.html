@@ -1,0 +1,18 @@
+<input (keyup)="onKey($event)" placeholder="Insert your name">
+<button (click)="save()">Save token</button>
+<button (click)="get()">Get tokens</button>
+<br>
+
+<b>Text:</b>
+<div [innerHTML]="htmlText"></div>
+<br>
+
+<div *ngIf="userTokens.length>0">
+  <b>Token List:</b>
+  <div *ngFor="let token of userTokens">
+    <div style="display: inline-block">
+      <div>{{token}}</div>
+      <button (click)="delete(token)">Delete</button>
+    </div>
+  </div>
+</div>
